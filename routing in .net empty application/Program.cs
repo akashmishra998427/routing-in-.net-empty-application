@@ -18,11 +18,14 @@ var app = builder.Build();
 //app.MapDefaultControllerRoute(); // ===> this will only call the home controller index action method
 
 // to define the custome routing 
-app.MapControllerRoute(
+//app.MapControllerRoute(
     
-    name:"default",
-    pattern:"{controller=user}/{action=Index}/{id?}" // this the way to define the custome routing and the id parameter is optional here because with id we added a ? symbol which id indicate the id parameter is optional  
-    );
+//    name:"default",
+//    pattern:"{controller=user}/{action=Index}/{id?}" // this the way to define the custome routing and the id parameter is optional here because with id we added a ? symbol which id indicate the id parameter is optional  
+//    );
 
+//============================  Adding middeware foe the convention based routing ==============================
+// this function call is important foe the Attribute based routing
+app.MapControllers();
 
 app.Run();
